@@ -16,6 +16,9 @@ import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.crashes.Crashes;
 import com.microsoft.appcenter.distribute.Distribute;
 
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
         mViewPager = findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        AppCenter.start(getApplication(), "642c14c1-6aa7-4f19-a23c-8f79869ed386",
+                  Analytics.class, Crashes.class);
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
